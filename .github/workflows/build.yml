@@ -19,13 +19,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y zip unzip openjdk-17-jdk \
-            autoconf libtool pkg-config libffi-dev libssl-dev
+            autoconf libtool pkg-config libffi-dev libssl-dev \
+            libstdc++6 aidl
 
       - name: Install Buildozer
         run: pip install buildozer cython
 
       - name: Build APK
-        run: buildozer -v android debug
+        run: echo y | buildozer -v android debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
