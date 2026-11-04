@@ -9,8 +9,8 @@ requirements = python3,kivy,bleak,pyjnius
 orientation = portrait
 fullscreen = 0
 
-# Bibliothèque Java de bleak (corrige le crash onScanCallback)
-android.gradle_dependencies = com.github.hbldh:bleak:1.2.0
+# Classes Java de bleak : fournies via android.add_src (pas de Maven !)
+android.add_src = java
 
 # Permissions : Bluetooth + localisation (toutes correctement orthographiées)
 android.permissions = BLUETOOTH,BLUETOOTH_ADMIN,BLUETOOTH_SCAN,BLUETOOTH_CONNECT,ACCESS_FINE_LOCATION,ACCESS_COARSE_LOCATION
