@@ -23,6 +23,12 @@ jobs:
       - name: Install Buildozer
         run: pip install buildozer cython
 
+      - name: Fetch bleak Java sources
+        run: |
+          git clone --depth 1 https://github.com/hbldh/bleak.git /tmp/bleak
+          mkdir -p java
+          cp -r /tmp/bleak/bleak/backends/p4android/java/com java/
+          
       - name: Build APK
         run: echo y | buildozer -v android debug
 
